@@ -26,7 +26,7 @@ bin/
 .vscode/
 
 ### Mac OS ###
-*.DS_Store### Example user template template
+*.DS_Store
 ### Example user template
 
 # IntelliJ project files
