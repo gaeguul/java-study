@@ -30,7 +30,7 @@ bin/
 ### Example user template
 
 # IntelliJ project files
-.idea
+Java/.idea
 *.iml
 out
 gen
