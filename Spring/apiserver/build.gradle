@@ -15,6 +15,7 @@ ext {
     springVersion = '5.3.37'
     lombokVersion = '1.18.30'
     log4j2Version = '2.24.1'       // Log4j2 최신 안정 버전 (보안 업데이트 포함)
+    springSecurityVersion = '5.8.13'
 }
 
 sourceCompatibility = '1.17'
@@ -26,13 +27,16 @@ tasks.withType(JavaCompile) {
 
 
 dependencies {
-    // Rest Template
-    implementation 'org.apache.httpcomponents:httpcore:4.4.15'
-    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    // jjwt
+    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
+    implementation("io.jsonwebtoken:jjwt-jackson:0.11.5")
 
-    // Swagger
-    implementation 'io.springfox:springfox-swagger2:2.9.2'
-    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+    // 보안
+    implementation("org.springframework.security:spring-security-web:${springSecurityVersion}")
+    implementation("org.springframework.security:spring-security-config:${springSecurityVersion}")
+    implementation("org.springframework.security:spring-security-core:${springSecurityVersion}")
+    implementation("org.springframework.security:spring-security-taglibs:${springSecurityVersion}")
 
     // 데이터베이스
     implementation 'com.mysql:mysql-connector-j:8.1.0'
